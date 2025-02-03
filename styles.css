@@ -1,0 +1,104 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    background-color: pink; /* Fundo rosa claro */
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Container centralizado */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilo do botão */
+#clickButton {
+    background-color: rgb(203, 40, 203); /* Cor violeta */
+    color: white; /* Texto branco */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#clickButton:hover {
+    transform: scale(1.05); /* Efeito de escala ao passar o mouse */
+    background-color: rgb(125, 24, 125);
+}
+
+/* Overlay e efeitos */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
+    backdrop-filter: blur(10px); /* Efeito blur */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Estilo da imagem */
+#movingImage {
+    width: 100px;
+    position: absolute;
+    top: -100px; /* Começa fora da tela */
+    right: -100px; /* Começa fora da tela */
+    transition: all 2s ease-in-out;
+    border-radius: 50%;
+}
+
+/* Estilo do texto */
+#helloText {
+    color: white;
+    font-size: 36px; /* Texto maior */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 2s ease-in-out;
+    margin-top: 160px; /* Espaço entre a imagem e o texto */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    width: 100%; /* Garante que o texto ocupe a largura total */
+    cursor: pointer;
+}
+
+#helloText:hover {
+    color: violet;
+}
+
+/* Chuva de emojis */
+#emojiRain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 24px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
